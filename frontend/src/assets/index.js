@@ -1,5 +1,7 @@
 import Logo from "./autoAvenueLogo.png";
 import phone from "./phone.png";
 import location from "./location.png";
+import facebookLogo from "./facebookicon.png";
+import instagramLogo from "./instagram.png";
 
-export { Logo, phone, location };
+export { Logo, phone, location, facebookLogo, instagramLogo };
