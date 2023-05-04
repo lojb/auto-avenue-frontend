@@ -9,7 +9,7 @@ const Register = () => {
             <input type={"text"}/>
             <h3>Confirm password</h3>
             <input type={"text"}/>
-            <button>Login</button>
+            <button>Register</button>
         </div>
     )
 }
