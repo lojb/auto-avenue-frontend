@@ -14,6 +14,7 @@ import Browse from "./pages/Browse";
 import Create from "./pages/Create";
 import AboutUs from "./pages/AboutUs";
 import AdminPage from "./pages/AdminPage";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/browse" element={<Browse />}></Route>
           <Route path="/create" element={<Create />}></Route>
           <Route path="/about" element={<AboutUs />}></Route>
+          <Route path="/contact" element={<Contact />}></Route>
           <Route path="/admin" element={<AdminPage />}></Route>
         </Routes>
         <Footer />
