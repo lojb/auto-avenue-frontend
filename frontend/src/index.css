@@ -292,5 +292,59 @@ code {
   margin-right: 10px;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#filter {
+  width: 80%;
+  margin-bottom: 50px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.filter-input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter-input-group p {
+  margin: 0;
+  margin-right: 10px;
+}
+
+.filter-input-group input[type="number"],
+.filter-input-group select,
+.filter-input-group input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.car-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.car-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
 
 
