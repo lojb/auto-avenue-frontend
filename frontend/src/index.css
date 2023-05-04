@@ -1,11 +1,24 @@
-body {
+ html {
+  height: 100%;
+  box-sizing: border-box;
+ }
+
+ body {
   margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 7rem;
+  box-sizing: inherit;
+  display: flex;
+  flex-direction: column;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -160,5 +173,53 @@ code {
 .contact-page__form button:hover {
   background-color: #0062cc;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+.footer__left {
+  display: flex;
+  flex-direction: column;
+  margin-left: ;
+}
+
+.footer__company-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer__credentials {
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.footer__right {
+  display: flex;
+}
+
+.footer__right a {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.footer__right a img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.footer__right a:hover img {
+  opacity: 0.7;
+}
+
 
 
