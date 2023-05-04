@@ -4,7 +4,7 @@ const Register = () => {
     return (
         <div className="form-container">
       <h2>Welcome to us!</h2>
-      <form>
+      <form className="login-register-form">
         <div className="form-input">
           <label htmlFor="username">Username</label>
           <input type="text" id="username" />

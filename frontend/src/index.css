@@ -230,7 +230,7 @@ code {
   background-color: #ffffff;
 }
 
-form {
+.login-register-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -250,13 +250,13 @@ form {
   margin-bottom: 20px;
 }
 
-label {
+.form-input label {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-input {
+.form-input input {
   width: 100%;
   padding: 10px;
   border: none;
