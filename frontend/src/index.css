@@ -180,17 +180,17 @@ code {
   align-items: center;
   background-color: #f2f2f2;
   color: rgb(0, 0, 0);
-  padding: 0.5rem;
+  padding: 1rem;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 97%;
   margin-top: auto;
 }
 
 .footer__left {
   display: flex;
   flex-direction: column;
-  margin-left: ;
+  
 }
 
 .footer__company-name {
