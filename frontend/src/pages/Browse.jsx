@@ -1,6 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { carPicture } from "../assets";
+
+const CarCard = ({ car }) => {
+  const { price, manufacturer, model, year } = car;
+  console.log(manufacturer);
+  return (
+    <div className="car-card">
+      <div className="car-card-image">
+        <img src={carPicture} alt="Car" />
+      </div>
+      <div className="car-card-details">
+        <div className="car-card-details">
+          <div className="car-card-price">{price}$</div>
+          <div className="car-card-make">{manufacturer}</div>
+          <div className="car-card-model">{model}</div>
+          <div className="car-card-year">{year}</div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Browse = () => {
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/adverts")
+      .then((response) => response.json())
+      .then((data) => {
+        setCars(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <div className="container">
       <div id="filter">
@@ -12,13 +46,20 @@ const Browse = () => {
           <p>To</p>
           <input type="number" />
         </div>
+        <h3>Filter by price</h3>
+        <div className="filter-input-group">
+          <p>From</p>
+          <input type="number" />
+          <p>To</p>
+          <input type="number" />
+        </div>
         <h3>Filter by make</h3>
         <div className="filter-input-group">
           <select>
             <option>--</option>
-            <option>make1</option>
-            <option>make2</option>
-            <option>make3</option>
+            <option>Mercedes</option>
+            <option>Audi</option>
+            <option>BMW</option>
           </select>
         </div>
         <h3>Filter by model</h3>
@@ -28,13 +69,9 @@ const Browse = () => {
         <button className="filter-button">Apply filters</button>
       </div>
       <div>
-        <ul className="car-list">
-          <li>car1</li>
-          <li>car2</li>
-          <li>car3</li>
-          <li>car4</li>
-          <li>car5</li>
-        </ul>
+        {cars.map((car) => (
+          <CarCard key={car.id} car={car} />
+        ))}
       </div>
     </div>
   );
