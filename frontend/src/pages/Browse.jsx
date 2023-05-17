@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { carPicture } from "../assets";
 
 const CarCard = ({ car }) => {
-  const { price, manufacturer, model, year } = car;
-  console.log(manufacturer);
+  const { id, price, manufacturer, model, year } = car;
+  console.log(id);
   return (
     <div className="car-card">
       <div className="car-card-image">
-        <img src={carPicture} alt="Car" />
+        <Link to={`/browse/${id}`}>
+          <img src={carPicture} alt="Car" />
+        </Link>
       </div>
       <div className="car-card-details">
         <div className="car-card-details">

@@ -15,6 +15,7 @@ import Create from "./pages/Create";
 import AboutUs from "./pages/AboutUs";
 import AdminPage from "./pages/AdminPage";
 import Contact from "./pages/Contact";
+import AdvertDetails from "./pages/AdvertDetails";
 
 function App() {
   return (
@@ -25,11 +26,12 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/browse" element={<Browse />}></Route>
+          <Route exact path="/browse" element={<Browse />}></Route>
           <Route path="/create" element={<Create />}></Route>
           <Route path="/about" element={<AboutUs />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/admin" element={<AdminPage />}></Route>
+          <Route path="/browse/:id" element={<AdvertDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>
