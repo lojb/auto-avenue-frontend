@@ -31,10 +31,13 @@ const Navbar = () => {
         <Link to="/about" className="navbar__link">
           About
         </Link>
+        <span className="navbar__link_span">|</span>
         {snap.isUser && (
           <div>
-            <span>{snap.username}</span>
-            <button onClick={handleClick}>Log out</button>
+            <span className="username-span">{snap.username}</span>
+            <button className="logout-button" onClick={handleClick}>
+              Log out
+            </button>
           </div>
         )}
         {!snap.isUser && (
