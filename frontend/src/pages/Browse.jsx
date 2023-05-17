@@ -4,7 +4,7 @@ import { carPicture } from "../assets";
 
 const CarCard = ({ car }) => {
   const { id, price, manufacturer, model, year } = car;
-  console.log(id);
+
   return (
     <div className="car-card">
       <div className="car-card-image">
