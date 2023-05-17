@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { state } from "../store";
 import { useSnapshot } from "valtio";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const snap = useSnapshot(state);
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [emailConfirm, setEmailConfirm] = useState("");
@@ -53,6 +55,7 @@ const Register = () => {
       setEmailConfirm("");
       setPassword("");
       setPasswordConfirm("");
+      navigate("/");
     }
   };
 
@@ -103,7 +106,7 @@ const Register = () => {
         <div className="form-input">
           <label htmlFor="confirm-password">Confirm Password</label>
           <input
-            type="confirm-password"
+            type="password"
             id="password"
             value={passwordConfirm}
             onChange={(e) => setPasswordConfirm(e.target.value)}
