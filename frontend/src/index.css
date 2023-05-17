@@ -523,3 +523,79 @@ code {
   font-size: 14px;
   color: #777;
 }
+/*CarDetails page styles*/
+.advert-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.advert-details-card {
+  display: flex;
+  flex-direction: column;
+  
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.advert-details-card-image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.advert-details-card-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.advert-details-card-content {
+  flex: 1;
+}
+
+.advert-details-card-header {
+  margin-bottom: 10px;
+}
+
+.advert-details-card-body p {
+  margin-bottom: 5%;
+}
+
+.advert-details-message-form {
+  margin-top: 20px;
+}
+
+.advert-details-h3 {
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+.advert-details-textarea {
+  width: 80%;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-left: 5%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.advert-details-button {
+  padding: 10px 20px;
+  margin-left: 5%;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.advert-details-button:hover {
+  background-color: #0069d9;
+}
+
+
