@@ -44,7 +44,7 @@ const Register = () => {
                     <label htmlFor="username">Username</label>
                     <input
                         type="text"
-                        id="model"
+                        id="username"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
@@ -86,10 +86,7 @@ const Register = () => {
                            required
                     />
                 </div>
-                <button className="login-btn"
-                        //disabled={!(email === emailConfirm && password === passwordConfirm && username !== "" && email !== "" && password !== "")}
-                        onClick={handleSubmit}
-                >Register
+                <button className="login-btn" onClick={handleSubmit}>Register
                 </button>
             </form>
         </div>)
