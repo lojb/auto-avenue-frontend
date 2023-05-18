@@ -60,7 +60,7 @@ const Register = () => {
   };
 
   return (
-    <div className="form-container">
+    <div className="form-container mt-[7%]">
       <h2>Welcome to us!</h2>
       <form className="login-register-form">
         <div className="form-input">

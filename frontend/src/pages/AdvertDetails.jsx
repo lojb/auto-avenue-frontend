@@ -24,7 +24,7 @@ const AdvertDetails = () => {
   const { title, manufacturer, model, year, price, description } = advert;
 
   return (
-    <div className="advert-details">
+    <div className="advert-details mt-[7%]">
       <div className="advert-details-card">
         <div className="advert-details-card-image">
           <img src={carPicture} alt="Car" />

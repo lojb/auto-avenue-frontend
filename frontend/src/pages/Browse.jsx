@@ -58,7 +58,7 @@ const Browse = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mt-[7%]">
       <div id="filter">
         <h2>Filter menu</h2>
         <h3>Filter by year</h3>
