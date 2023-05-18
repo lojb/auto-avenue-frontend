@@ -684,3 +684,84 @@ color: rgb(232, 220, 107);
 .cssbuttons-io-button:active .icon {
   transform: scale(0.95);
 }
+
+/* AdminPage.css */
+
+.admin-page {
+  display: flex;
+}
+
+.admin-sidebar {
+  flex: 0 0 auto;
+  margin-top: 90px;
+  width: 200px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.admin-sidebar__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-sidebar__button {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #e0e0e0a4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-sidebar__button:hover {
+  background-color: #d0d0d0;
+}
+
+.admin-sidebar__button-text {
+  font-weight: bold;
+  font-size: small;
+}
+
+.admin-content {
+  flex: 1 1 auto;
+  padding: 20px;
+}
+
+.admin-content__table {
+  margin-top: 100px;
+}
+
+/*users table design */
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+.users-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.users-table td {
+  text-align: center;
+}
+
+.users-table .delete-button {
+  padding: 6px 12px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.users-table .delete-button:hover {
+  background-color: #c0392b;
+}

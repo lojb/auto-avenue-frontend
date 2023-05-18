@@ -89,6 +89,14 @@ const Navbar = () => {
             Create
           </Link>
         </div>
+        <div>
+          <Link
+            to="/admin"
+            className="px-4 py-2 rounded-md bg-secondary text-black font-medium hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary"
+          >
+            AdminPanel
+          </Link>
+        </div>
         {snap.isUser && (
           <div className="text-white">
             <span>{snap.username}</span>

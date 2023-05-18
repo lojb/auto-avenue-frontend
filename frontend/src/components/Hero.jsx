@@ -23,7 +23,7 @@ const Hero = () => {
             <Link to="/browse">
               <button className="cssbuttons-io-button">
                 Let's Explore
-                <div className="icon items-center ">
+                <div className="icon items-center z-20">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <CarsCanvas />
+
       <div className="absolute xs:bottom-10 bottom-10 w-full flex justify-center items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-black flex justify-center items-start p-2">
