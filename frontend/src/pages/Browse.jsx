@@ -97,10 +97,20 @@ const Browse = () => {
             value={makeFilter}
             onChange={(e) => setMakeFilter(e.target.value)}
           >
-            <option>--</option>
-            <option>Mercedes</option>
+            <option value={""} placeholder={"Select a manufacturer"}></option>
+            <option>Alfa Romeo</option>
             <option>Audi</option>
             <option>BMW</option>
+            <option>Citroen</option>
+            <option>Ford</option>
+            <option>Honda</option>
+            <option>Kia</option>
+            <option>Lada</option>
+            <option>Mercedes</option>
+            <option>Nissan</option>
+            <option>Peugeot</option>
+            <option>Porsche</option>
+            <option>Toyota</option>
           </select>
         </div>
         <h3>Filter by model</h3>
