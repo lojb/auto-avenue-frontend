@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { carPicture } from "../assets";
+import {manufacturers} from "../constants";
 
 const CarCard = ({ car }) => {
   const { id, price, manufacturer, model, year } = car;
@@ -98,19 +99,9 @@ const Browse = () => {
             onChange={(e) => setMakeFilter(e.target.value)}
           >
             <option value={""} placeholder={"Select a manufacturer"}></option>
-            <option>Alfa Romeo</option>
-            <option>Audi</option>
-            <option>BMW</option>
-            <option>Citroen</option>
-            <option>Ford</option>
-            <option>Honda</option>
-            <option>Kia</option>
-            <option>Lada</option>
-            <option>Mercedes</option>
-            <option>Nissan</option>
-            <option>Peugeot</option>
-            <option>Porsche</option>
-            <option>Toyota</option>
+            {manufacturers.map((make) => (
+                <option>{make}</option>
+            ))}
           </select>
         </div>
         <h3>Filter by model</h3>
