@@ -21,8 +21,8 @@ const Cars = ({ isMobile }) => {
       />
       <primitive
         object={car.scene}
-        scale={isMobile ? 0.5 : 1.5}
-        position={isMobile ? [0, -3, -2.2] : [0, -1, -1.5]}
+        scale={isMobile ? 0.8 : 1.8}
+        position={isMobile ? [0, -2, 0] : [0, -1, 0]}
         rotation={[0, 0, 0]}
       />
     </mesh>
@@ -58,7 +58,7 @@ const CarsCanvas = () => {
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate
-          autoRotateSpeed={3}
+          autoRotateSpeed={-3}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
