@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { Link } from "react-router-dom";
+import CarsCanvas from "./canvas/Car";
 
 const Hero = () => {
   return (
@@ -41,7 +42,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
+      <CarsCanvas />
       <div className="absolute xs:bottom-10 bottom-10 w-full flex justify-center items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-black flex justify-center items-start p-2">
