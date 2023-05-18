@@ -5,6 +5,7 @@ import {
   facebookLogo,
   instagramLogo,
 } from "../assets";
+import React from "react";
 
 export const navLinks = [
   {
@@ -73,4 +74,20 @@ const testimonials = [
   },
 ];
 
-export { services, testimonials, contacts };
+const manufacturers = [
+  "Alfa Romeo",
+  "Audi",
+  "BMW",
+  "Citroen",
+  "Ford",
+  "Honda",
+  "Kia",
+  "Lada",
+  "Mercedes",
+  "Nissan",
+  "Peugeot",
+  "Porsche",
+  "Toyota",
+]
+
+export { services, testimonials, contacts, manufacturers };
