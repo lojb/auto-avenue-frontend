@@ -21,7 +21,7 @@ const Cars = ({ isMobile }) => {
       />
       <primitive
         object={car.scene}
-        scale={isMobile ? 0.5 : 1}
+        scale={isMobile ? 0.5 : 1.5}
         position={isMobile ? [0, -3, -2.2] : [0, -1, -1.5]}
         rotation={[0, 0, 0]}
       />
