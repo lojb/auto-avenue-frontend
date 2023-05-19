@@ -19,7 +19,7 @@ const Hero = () => {
             Unlock Your Perfect Ride: <br className="sm:block hidden" />{" "}
             Connecting Car Buyers and Sellers Effortlessly.
           </p>
-          <div className="m-10 ">
+          <div className="mt-10 mb-10 mr-10 ml-0 ">
             <Link to="/browse">
               <button className="cssbuttons-io-button">
                 Let's Explore
