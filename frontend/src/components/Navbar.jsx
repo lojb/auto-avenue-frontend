@@ -94,7 +94,7 @@ const Navbar = () => {
             </Link>
           </div>
         )}
-        {user && (
+        {(user && user.role === "ADMIN") && (
           <div>
             <Link
               to="/admin"
