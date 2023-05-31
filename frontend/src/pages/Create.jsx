@@ -2,9 +2,8 @@ import React, {useState} from "react";
 import {confirmAlert} from "react-confirm-alert";
 import Lottie from "lottie-react";
 import animationData from "../assets/carAnimation/car-in-movement.json";
-import {useSnapshot} from "valtio";
-import {state} from "../store";
 import {manufacturers} from "../constants";
+import {useAuthContext} from "../hooks/useAuthContext";
 
 const Create = () => {
     const [manufacturer, setManufacturer] = useState("");
@@ -13,7 +12,7 @@ const Create = () => {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
     const [description, setDescription] = useState("");
-    const snap = useSnapshot(state);
+    const {user} = useAuthContext();
 
     const handleSubmit = () => {
         const formData = {
@@ -23,13 +22,14 @@ const Create = () => {
             title,
             price,
             description,
-            sellerId: snap.userId
+            sellerId: user.userId
         };
 
         fetch("http://localhost:8080/adverts", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
+                "Authorization": `Bearer ${user.token}`
             },
             body: JSON.stringify(formData),
         })
