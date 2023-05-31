@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
+import {useAuthContext} from "../hooks/useAuthContext";
 
 const AdvertsTable = () => {
   const [adverts, setAdverts] = useState([]);
+  const {user} = useAuthContext();
 
   useEffect(() => {
     const fetchAdverts = async () => {
       try {
-        const response = await fetch("http://localhost:8080/adverts");
+        const response = await fetch("http://localhost:8080/adverts", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${user.token}`
+          }
+        });
         if (response.ok) {
           const data = await response.json();
           setAdverts(data);
@@ -27,6 +35,10 @@ const AdvertsTable = () => {
         `http://localhost:8080/adverts/${advertId}`,
         {
           method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${user.token}`
+          }
         }
       );
       if (response.ok) {
