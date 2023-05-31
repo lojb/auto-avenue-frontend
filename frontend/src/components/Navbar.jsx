@@ -106,7 +106,7 @@ const Navbar = () => {
         )}
         {user && (
           <div className="text-white">
-            <span>{user.email}</span>
+            <span>{user.username}</span>
             <button
               className="ml-2 px-4 py-2 rounded-md bg-red-600 text-white font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50"
               onClick={handleClick}
