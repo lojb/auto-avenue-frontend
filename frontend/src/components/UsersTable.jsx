@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
+import {useAuthContext} from "../hooks/useAuthContext";
 
 const UsersTable = () => {
   const [users, setUsers] = useState([]);
+  const {user} = useAuthContext();
 
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:8080/users");
+        const response = await fetch("http://localhost:8080/users", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${user.token}`
+          }
+        });
         if (response.ok) {
           const data = await response.json();
           setUsers(data);
@@ -25,6 +33,10 @@ const UsersTable = () => {
     try {
       const response = await fetch(`http://localhost:8080/users/${userId}`, {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${user.token}`
+        }
       });
       if (response.ok) {
         setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId));
