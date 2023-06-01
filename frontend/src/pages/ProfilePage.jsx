@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import UserProfileCard from "../components/UserProfileCard";
 
 import UserAdverts from "../components/UserAdverts";
+import WishlistTable from "../components/WishlistTable";
 
 const ProfilePage = () => {
   const [activeButton, setActiveButton] = useState(null);
@@ -53,6 +54,11 @@ const ProfilePage = () => {
           <div className="admin-content__table">
             <UserAdverts />
           </div>
+        )}
+        {activeButton === "wishlist" && (
+            <div className="admin-content__table">
+              <WishlistTable />
+            </div>
         )}
       </div>
     </div>
