@@ -103,12 +103,12 @@ const Navbar = () => {
                 )}
                 {user && (
                     <div className="text-white flex items-center gap-2">
-                        <span>{user.username}</span>
-                        <div className="w-8 h-8">
-                            <Link to={`/profilepage/${user.userId}`}>
-                                <img src={profile} alt="profile"/>
-                            </Link>
-                        </div>
+                        <Link to={`/profilepage/${user.userId}`}>
+                            <div className="flex items-center">
+                                <span className="mr-2">{user.username}</span>
+                                <img className="w-8 h-8" src={profile} alt="profile" />
+                            </div>
+                        </Link>
                         <Link to={"/"}>
                             <button
                                 className="ml-4 px-4 py-2 rounded-md bg-red-600 text-white font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50"
