@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { state } from "../store";
 import { useSnapshot } from "valtio";
 import { styles } from "../styles";
-import { Logo, menu, close } from "../assets";
+import { Logo, menu, close, profile } from "../assets";
 import { navLinks } from "../constants";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
@@ -94,7 +94,7 @@ const Navbar = () => {
             </Link>
           </div>
         )}
-        {(user && user.role === "ADMIN") && (
+        {user && user.role === "ADMIN" && (
           <div>
             <Link
               to="/admin"
@@ -105,10 +105,15 @@ const Navbar = () => {
           </div>
         )}
         {user && (
-          <div className="text-white">
+          <div className="text-white flex items-center gap-2">
             <span>{user.username}</span>
+            <div className="w-8 h-8">
+              <Link to={`/profilepage/${user.userId}`}>
+                <img src={profile} alt="profile" />
+              </Link>
+            </div>
             <button
-              className="ml-2 px-4 py-2 rounded-md bg-red-600 text-white font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50"
+              className="ml-4 px-4 py-2 rounded-md bg-red-600 text-white font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50"
               onClick={handleClick}
             >
               Log out
