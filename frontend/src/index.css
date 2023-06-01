@@ -767,70 +767,65 @@ color: rgb(232, 220, 107);
 }
 
 /*newform*/
-form.signup, form.login {
+.login-form {
   max-width: 400px;
-  margin: 40px auto;
+  margin: 150px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 20px;
-  border: 1px solid;
-  margin-top: 150px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.form.signup, form.login, .login-input {
+.text-center {
+  text-align: center;
+}
 
-border-radius: 20px;
+
+.login-form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.login-form-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .password-container {
-  display: flex;
- 
-  
-}
-
-.passwordSpan {
-  cursor: pointer;
   position: relative;
-  margin-left: -30px;
-  margin-top:5px;
-  margin-right: 5px;
-  
 }
-form .login-button {
-  background: grey;
-  border: 0;
-  color: #fff;
-  padding: 10px;
-  font-family: "Poppins";
-  border-radius: 10px;
+
+.login-form-password {
+  padding-right: 40px;
+}
+
+.login-form-password-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
   cursor: pointer;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-  justify-content: center;
-  display: flex;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  
 }
 
-form .login-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-form .login-button:active {
-  transform: translateY(2px);
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
-}
-
-div.error {
+.login-form-button {
+  width: 100%;
   padding: 10px;
-  background: #ffefef;
-  border: 1px solid var(--error);
-  color: var(--error);
-  border-radius: 4px;
-  margin: 20px 0;
+  font-size: 16px;
+  background-color: #0056b3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
-input.error {
-  border: 1px solid var(--error);
+
+.login-form-button:hover{
+  background-color: #013975;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
 }
