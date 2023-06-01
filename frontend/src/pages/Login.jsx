@@ -29,39 +29,34 @@ const Login = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2>Welcome back!</h2>
-      <form className="login-register-form" onSubmit={handleSubmit}>
-        <div className="form-input">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div className="form-input">
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            type={passwordType}
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-          <span className="passwordSpan" onClick={handleToggle}>
-            <Icon icon={passwordIcon} size={25} />
-          </span>
-        </div>
-        <button className="login-btn" disabled={isLoading}>
-          Login
-        </button>
-        {error && <div className="error">{error}</div>}
-      </form>
-      <div className="register-link">
-        <p>Don't have an account?</p>
-        <Link to="/register">Register here</Link>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <h3 className="text-center mb-8 font-extrabold">Welcome back!</h3>
+
+      <label className="login-form-label">Username:</label>
+      <input
+        className="login-form-input"
+        type="text"
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
+      />
+
+      <label className="login-form-label">Password:</label>
+      <div className="password-container">
+        <input
+          className="login-form-input login-form-password"
+          type={passwordType}
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+        <span className="login-form-password-icon" onClick={handleToggle}>
+          <Icon icon={passwordIcon} size={25} />
+        </span>
       </div>
-    </div>
+      <button className="login-form-button" disabled={isLoading}>
+        Login
+      </button>
+      {error && <div className="error">{error}</div>}
+    </form>
   );
 };
 
