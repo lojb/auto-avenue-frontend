@@ -29,36 +29,36 @@ const Register = () => {
   };
 
   return (
-    <form className="login" onSubmit={handleSubmit}>
-      <h3 className="text-center mb-8">Sign up</h3>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <h3 className="text-center mb-8 font-extrabold">Sign up</h3>
 
-      <label>Username:</label>
+      <label className="login-form-label">Username:</label>
       <input
-        className="login-input"
+        className="login-form-input"
         type="text"
         onChange={(e) => setUsername(e.target.value)}
         value={username}
       />
-      <label>Email:</label>
+      <label className="login-form-label">Email:</label>
       <input
-        className="login-input"
+        className="login-form-input"
         type="email"
         onChange={(e) => setEmail(e.target.value)}
         value={email}
       />
-      <label>Password:</label>
+      <label className="login-form-label">Password:</label>
       <div className="password-container">
         <input
-          className="login-input"
+          className="login-form-input login-form-password"
           type={passwordType}
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <span className="passwordSpan" onClick={handleToggle}>
+        <span className="login-form-password-icon" onClick={handleToggle}>
           <Icon icon={passwordIcon} size={25} />
         </span>
       </div>
-      <button className="login-button" disabled={isLoading}>
+      <button className="login-form-button" disabled={isLoading}>
         Sign Up
       </button>
       {error && <div className="error">{error}</div>}
