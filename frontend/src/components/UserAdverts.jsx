@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 const UserAdverts = () => {
     const {user} = useAuthContext();
-    const [adverts, setAdverts] = useState([]);
+    const [adverts, setAdverts] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isUpdating, setIsUpdating] = useState(false);
     const [editedAdvert, setEditedAdvert] = useState(null);
@@ -127,7 +127,7 @@ const UserAdverts = () => {
 
     return (
         <div className="grid grid-cols-2 gap-4">
-            {adverts.length === 0 &&
+            {adverts && adverts.length === 0 &&
                 <div>
                     <h1>You have no adverts yet</h1>
                     <h1>To create a new advert, click on the button below</h1>
@@ -140,7 +140,7 @@ const UserAdverts = () => {
                     </Link>
                 </div>
             }
-            {adverts.map((advert) => (
+            {adverts && adverts.map((advert) => (
                 <div key={advert.id} className="bg-white rounded-lg p-4 shadow">
             <img
                 src={carPicture}

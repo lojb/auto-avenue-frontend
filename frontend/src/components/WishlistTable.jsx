@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {useAuthContext} from "../hooks/useAuthContext";
-import {bin, carPicture, edit} from "../assets";
+import {bin, carPicture} from "../assets";
 import {Link} from "react-router-dom";
 
 const WishlistTable = () => {
-    const [wishlist, setWishlist] = useState({});
-    const [items, setItems] = useState([]);
+    const [wishlist, setWishlist] = useState(null);
+    const [items, setItems] = useState(null);
     const {user} = useAuthContext();
 
     useEffect(() => {
@@ -81,7 +81,7 @@ const WishlistTable = () => {
 
     return(
         <div className="grid grid-cols-2 gap-4">
-            {items.length === 0 &&
+            {items && items.length === 0 &&
                 <div>
                     <h1>You have no wishlist items yet</h1>
                     <h1>You can add items to your wishlist in the browse menu</h1>
@@ -94,7 +94,7 @@ const WishlistTable = () => {
                     </Link>
                 </div>
             }
-            {items.map((advert) => (
+            {items && items.map((advert) => (
                 <div key={advert.id} className="bg-white rounded-lg p-4 shadow">
                     <img
                         src={carPicture}
