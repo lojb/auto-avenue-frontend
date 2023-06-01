@@ -17,7 +17,6 @@ import AdminPage from "./pages/AdminPage";
 
 import AdvertDetails from "./pages/AdvertDetails";
 import Welcome from "./pages/Welcome";
-import Wishlist from "./pages/Wishlist";
 import ProfilePage from "./pages/ProfilePage";
 
 function App() {
@@ -38,7 +37,7 @@ function App() {
         ></Route>
         <Route path="/browse" element={<Browse />}></Route>
         <Route path="/create" element={<Create />}></Route>
-        <Route path="/wishlist" element={<Wishlist />}></Route>
+
         <Route
           path="/admin"
           element={
