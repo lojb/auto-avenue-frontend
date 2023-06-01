@@ -10,6 +10,9 @@ import satisfaction from "./satisfaction.png";
 import verify from "./authenticity.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
+import profile from "./profile.png";
+import bin from "./bin.png";
+import edit from "./edit.png";
 
 export {
   Logo,
@@ -24,4 +27,7 @@ export {
   verify,
   menu,
   close,
+  profile,
+  bin,
+  edit,
 };
