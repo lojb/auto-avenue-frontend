@@ -578,6 +578,7 @@ color: rgb(232, 220, 107);
 .advert-details-card-image {
   width: 100%;
   margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .advert-details-card-image img {
@@ -828,4 +829,28 @@ color: rgb(232, 220, 107);
 .error {
   color: red;
   margin-top: 10px;
+}
+
+.custom-file-upload {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-file-upload input[type="file"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-file-upload-label {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.custom-file-upload-label:hover {
+  background-color: #e0e0e0;
 }

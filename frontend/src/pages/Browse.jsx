@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { carPicture } from "../assets";
-import {manufacturers} from "../constants";
+import { manufacturers } from "../constants";
 
 const CarCard = ({ car }) => {
-  const { id, price, manufacturer, model, year } = car;
+  const { id, price, manufacturer, model, year, imageUrl } = car;
 
   return (
     <div className="car-card">
       <div className="car-card-image">
         <Link to={`/browse/${id}`}>
-          <img src={carPicture} alt="Car" />
+          <img src={imageUrl} alt="Car" />
         </Link>
       </div>
       <div className="car-card-details">
@@ -100,7 +100,7 @@ const Browse = () => {
           >
             <option value={""} placeholder={"Select a manufacturer"}></option>
             {manufacturers.map((make) => (
-                <option>{make}</option>
+              <option>{make}</option>
             ))}
           </select>
         </div>
