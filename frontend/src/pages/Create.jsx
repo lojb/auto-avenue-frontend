@@ -27,7 +27,6 @@ const Create = () => {
     formData.append("file", image);
     formData.append("upload_preset", "dznubedj");
 
-    // Make a POST request to Cloudinary upload URL
     fetch("https://api.cloudinary.com/v1_1/dekwx51ge/image/upload", {
       method: "POST",
       body: formData,
@@ -37,7 +36,6 @@ const Create = () => {
         const imageUrl = data.secure_url;
         console.log(imageUrl);
 
-        // Save the image URL along with other form data to your backend API
         const advertData = {
           manufacturer,
           model,
@@ -45,8 +43,8 @@ const Create = () => {
           title,
           price,
           description,
+          sellerId: user.userId,
           imageUrl,
-          // other form data...
         };
         fetch("http://localhost:8080/adverts", {
           method: "POST",
