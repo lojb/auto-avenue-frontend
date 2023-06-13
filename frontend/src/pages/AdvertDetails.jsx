@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { carPicture } from "../assets";
+
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const AdvertDetails = () => {
@@ -23,8 +23,16 @@ const AdvertDetails = () => {
     return <div>Loading...</div>;
   }
 
-  const { title, manufacturer, model, year, price, description, imageUrl } =
-    advert;
+  const {
+    title,
+    manufacturer,
+    model,
+    year,
+    price,
+    transmission,
+    description,
+    imageUrl,
+  } = advert;
 
   const addToWishlist = () => {
     fetch(`http://localhost:8080/wishlist/${user.userId}`, {
@@ -41,6 +49,7 @@ const AdvertDetails = () => {
         title: advert.title,
         description: advert.description,
         price: advert.price,
+        transmission: advert.transmission,
         sellerId: user.userId,
         messages: advert.messages,
       }),
@@ -64,6 +73,7 @@ const AdvertDetails = () => {
             <p>Model: {model}</p>
             <p>Year: {year}</p>
             <p>Price: ${price}</p>
+            <p>Transmission: {transmission}</p>
             <p>Description: {description}</p>
           </div>
         </div>

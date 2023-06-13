@@ -88,6 +88,8 @@ const manufacturers = [
   "Peugeot",
   "Porsche",
   "Toyota",
-]
+];
 
-export { services, testimonials, contacts, manufacturers };
+const transmissionTypes = ["Manual", "Automatic", "Sequential"];
+
+export { services, testimonials, contacts, manufacturers, transmissionTypes };

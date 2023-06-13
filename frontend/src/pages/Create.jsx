@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { confirmAlert } from "react-confirm-alert";
 import Lottie from "lottie-react";
 import animationData from "../assets/carAnimation/car-in-movement.json";
-import { manufacturers } from "../constants";
+import { manufacturers, transmissionTypes } from "../constants";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const Create = () => {
@@ -11,6 +11,7 @@ const Create = () => {
   const [year, setYear] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
+  const [transmission, setTransmission] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [imageName, setImageName] = useState("");
@@ -42,6 +43,7 @@ const Create = () => {
           year,
           title,
           price,
+          transmission,
           description,
           sellerId: user.userId,
           imageUrl,
@@ -68,6 +70,7 @@ const Create = () => {
     setYear("");
     setTitle("");
     setPrice("");
+    setTransmission("");
     setDescription("");
     setImage(null);
     setImageName("");
@@ -179,6 +182,25 @@ const Create = () => {
               required
             />
           </div>
+
+          <div className="car-form-group">
+            <label className="car-form-label" htmlFor="transmission">
+              Transmission:
+            </label>
+            <select
+              className="car-form-select"
+              id="transmission"
+              value={transmission}
+              onChange={(e) => setTransmission(e.target.value)}
+              required="required"
+            >
+              <option disabled={true} placeholder=""></option>
+              {transmissionTypes.map((item) => (
+                <option>{item}</option>
+              ))}
+            </select>
+          </div>
+
           <div className="car-form-group">
             <label className="car-form-label" htmlFor="description">
               Description:
