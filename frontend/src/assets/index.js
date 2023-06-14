@@ -16,6 +16,7 @@ import edit from "./edit.png";
 import wheel from "./steering-wheel.svg";
 import arrow from "./right-arrow.svg";
 import tire from "./tire.svg";
+import error from "./error.avif";
 
 export {
   Logo,
@@ -36,4 +37,5 @@ export {
   wheel,
   arrow,
   tire,
+  error,
 };
