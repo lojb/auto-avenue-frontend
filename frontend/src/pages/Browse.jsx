@@ -18,7 +18,7 @@ const CarCard = ({ car }) => {
 
   return (
     <div
-      className="rounded-lg overflow-hidden shadow-md"
+      className="rounded-lg overflow-hidden shadow-md flex flex-col "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -36,11 +36,13 @@ const CarCard = ({ car }) => {
         </p>
 
         <div className="flex justify-center m-5 ">
-          <img
-            src={imageUrl}
-            alt="Car"
-            className="relative w-full h-40 my-3 object-contain rounded-md"
-          />
+          <div className="relative w-full h-40 my-3 rounded-md overflow-hidden">
+            <img
+              src={imageUrl}
+              alt="Car"
+              className="object-cover w-full h-full"
+            />
+          </div>
         </div>
         {!hovered && (
           <div className="flex justify-between p-2">
@@ -103,64 +105,73 @@ const Browse = () => {
   };
 
   return (
-    <div className="container mt-[7%]">
-      <div id="filter">
-        <h2>Filter menu</h2>
-        <h3>Filter by year</h3>
-        <div className="filter-input-group">
-          <p>From</p>
+    <div className="items-center mt-[7%]">
+      <div id="filter" className="py-8">
+        <h2 className="text-xl font-bold mb-4">Advanced searching</h2>
+        <div className="mb-4">
           <input
             type="number"
             value={yearFromFilter}
             onChange={(e) => setYearFromFilter(e.target.value)}
+            placeholder="From year"
+            className="border border-gray-300 rounded-md px-4 py-2 w-48"
           />
-          <p>To</p>
+          <span className="mx-2">-</span>
           <input
             type="number"
             value={yearToFilter}
             onChange={(e) => setYearToFilter(e.target.value)}
+            placeholder="To year"
+            className="border border-gray-300 rounded-md px-4 py-2 w-48"
           />
         </div>
-        <h3>Filter by price</h3>
-        <div className="filter-input-group">
-          <p>From</p>
+        <div className="mb-4">
           <input
             type="number"
             value={priceFromFilter}
             onChange={(e) => setPriceFromFilter(e.target.value)}
+            placeholder="From price"
+            className="border border-gray-300 rounded-md px-4 py-2 w-48"
           />
-          <p>To</p>
+          <span className="mx-2">-</span>
           <input
             type="number"
             value={priceToFilter}
             onChange={(e) => setPriceToFilter(e.target.value)}
+            placeholder="To price"
+            className="border border-gray-300 rounded-md px-4 py-2 w-48"
           />
         </div>
-        <h3>Filter by make</h3>
-        <div className="filter-input-group">
-          <select
-            value={makeFilter}
-            onChange={(e) => setMakeFilter(e.target.value)}
-          >
-            <option value={""} placeholder={"Select a manufacturer"}></option>
-            {manufacturers.map((make) => (
-              <option>{make}</option>
-            ))}
-          </select>
-        </div>
-        <h3>Filter by model</h3>
-        <div className="filter-input-group">
+        <div className="mb-4">
           <input
             type="text"
             value={modelFilter}
             onChange={(e) => setModelFilter(e.target.value)}
+            placeholder="Model"
+            className="border border-gray-300 rounded-md px-4 py-2 w-48"
           />
         </div>
-        <button className="filter-button" onClick={applyFilters}>
+        <div className="mb-4">
+          <select
+            value={makeFilter}
+            onChange={(e) => setMakeFilter(e.target.value)}
+            className="border border-gray-300 rounded-md px-4 py-2 w-48"
+          >
+            <option value="">Manufacturer</option>
+            {manufacturers.map((make) => (
+              <option key={make}>{make}</option>
+            ))}
+          </select>
+        </div>
+        <button
+          className="bg-blue-500 hover:bg-blue-600 text-white rounded-md px-4 py-2"
+          onClick={applyFilters}
+        >
           Apply filters
         </button>
       </div>
-      <div className="flex flex-row gap-4">
+
+      <div className="flex flex-wrap gap-4 justify-center">
         {cars.map((car) => (
           <CarCard key={car.id} car={car} />
         ))}
