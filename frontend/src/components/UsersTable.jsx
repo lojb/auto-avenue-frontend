@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {useAuthContext} from "../hooks/useAuthContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const UsersTable = () => {
   const [users, setUsers] = useState([]);
-  const {user} = useAuthContext();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -12,8 +12,8 @@ const UsersTable = () => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${user.token}`
-          }
+            Authorization: `Bearer ${user.token}`,
+          },
         });
         if (response.ok) {
           const data = await response.json();
@@ -27,7 +27,7 @@ const UsersTable = () => {
     };
 
     fetchUsers();
-  }, []);
+  }, [user.token]);
 
   const deleteUser = async (userId) => {
     try {
@@ -35,8 +35,8 @@ const UsersTable = () => {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${user.token}`
-        }
+          Authorization: `Bearer ${user.token}`,
+        },
       });
       if (response.ok) {
         setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId));

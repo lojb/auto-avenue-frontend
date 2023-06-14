@@ -5,7 +5,6 @@ import {
   facebookLogo,
   instagramLogo,
 } from "../assets";
-import React from "react";
 
 export const navLinks = [
   {

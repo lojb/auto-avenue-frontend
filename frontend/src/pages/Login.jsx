@@ -1,4 +1,3 @@
-import { Link, redirect, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 import { Icon } from "react-icons-kit";
@@ -8,7 +7,7 @@ import { eye } from "react-icons-kit/oct/eye";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { login, error, isLoading } = useLogin();
+  const { login, error } = useLogin();
   const [passwordType, setPasswordType] = useState("password");
   const [passwordIcon, setPasswordIcon] = useState(eyeClosed);
 

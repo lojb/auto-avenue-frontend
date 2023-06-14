@@ -26,7 +26,7 @@ const UserProfileCard = () => {
     };
 
     fetchUserData();
-  }, []);
+  }, [user.token, user.userId]);
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
-import { bin, carPicture } from "../assets";
+import { bin } from "../assets";
 import { Link } from "react-router-dom";
 
 const WishlistTable = () => {
@@ -33,7 +33,7 @@ const WishlistTable = () => {
       }
     };
     fetchAdverts();
-  }, [user.userId]);
+  }, [user.token, user.userId]);
 
   useEffect(() => {
     const fetchWishlist = async () => {
@@ -56,7 +56,7 @@ const WishlistTable = () => {
     };
 
     fetchWishlist();
-  }, [user.token]);
+  }, [user.token, user.userId]);
 
   const deleteItem = async (advertId) => {
     try {
@@ -100,7 +100,7 @@ const WishlistTable = () => {
           <div key={advert.id} className="bg-white rounded-lg p-4 shadow">
             <img
               src={advert.imageUrl}
-              alt="Advert Image"
+              alt={advert.title}
               className="w-full h-40 object-cover mb-4 rounded-lg"
             />
             <h3 className="text-xl font-medium">

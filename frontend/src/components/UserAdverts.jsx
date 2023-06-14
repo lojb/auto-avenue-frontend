@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuthContext } from "../hooks/useAuthContext";
-import { carPicture, bin, edit } from "../assets";
+import { bin, edit } from "../assets";
 import { Link } from "react-router-dom";
 
 const UserAdverts = () => {
@@ -35,13 +35,13 @@ const UserAdverts = () => {
     };
 
     fetchUserAdverts();
-  }, [user.token]);
+  }, [user.token, user.userId]);
 
   useEffect(() => {
     if (editedAdvert) {
       setEditedData(editedAdvert);
     }
-  }, [editedAdvert]);
+  }, [editedAdvert, user.token]);
 
   const deleteAdvert = async (advertId) => {
     try {
@@ -143,7 +143,7 @@ const UserAdverts = () => {
           <div key={advert.id} className="bg-white rounded-lg p-4 shadow">
             <img
               src={advert.imageUrl}
-              alt="Advert Image"
+              alt={advert.title}
               className="w-full h-60 object-cover mb-4 rounded-lg"
             />
             <h3 className="text-xl font-medium">
