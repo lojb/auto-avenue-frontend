@@ -13,6 +13,10 @@ import close from "./close.svg";
 import profile from "./profile.png";
 import bin from "./bin.png";
 import edit from "./edit.png";
+import wheel from "./steering-wheel.svg";
+import arrow from "./right-arrow.svg";
+import tire from "./tire.svg";
+import error from "./error.avif";
 
 export {
   Logo,
@@ -30,4 +34,8 @@ export {
   profile,
   bin,
   edit,
+  wheel,
+  arrow,
+  tire,
+  error,
 };

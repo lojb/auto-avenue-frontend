@@ -12,7 +12,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Browse from "./pages/Browse";
 import Create from "./pages/Create";
-
+import ErrorPage from "./pages/ErrorPage";
 import AdminPage from "./pages/AdminPage";
 
 import AdvertDetails from "./pages/AdvertDetails";
@@ -46,6 +46,7 @@ function App() {
         ></Route>
         <Route path="/browse/:id" element={<AdvertDetails />} />
         <Route path="/profilepage/:id" element={<ProfilePage />} />
+        <Route path="/*" element={<ErrorPage />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

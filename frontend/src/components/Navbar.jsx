@@ -11,6 +11,29 @@ const Navbar = () => {
   const { user } = useAuthContext();
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+  const [serverStatus, setServerStatus] = useState();
+
+  const checkServerStatus = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/health");
+      if (response.ok) {
+        console.log("Backend server is active and running.");
+        setServerStatus(true);
+      } else {
+        console.log("Backend server is not available.");
+        setServerStatus(false);
+      }
+    } catch (error) {
+      console.error("Error occurred while checking server status:", error);
+      // Display an error message to the user or trigger appropriate actions
+    }
+  };
+
+  // Call the function immediately
+  checkServerStatus();
+
+  // Check server status every 10 seconds (adjust the interval as needed)
+  setInterval(checkServerStatus, 20000);
 
   const handleClick = () => {
     logout();
@@ -133,6 +156,11 @@ const Navbar = () => {
               </button>
             </Link>
           </div>
+        )}
+        {serverStatus ? (
+          <div className="w-4 h-4 rounded-full bg-green-500"></div>
+        ) : (
+          <div className="w-4 h-4 rounded-full bg-red-500"></div>
         )}
       </div>
     </nav>

@@ -52,9 +52,7 @@ const Login = () => {
           <Icon icon={passwordIcon} size={25} />
         </span>
       </div>
-      <button className="login-form-button" disabled={isLoading}>
-        Login
-      </button>
+      <button className="login-form-button">Login</button>
       {error && <div className="error">{error}</div>}
     </form>
   );
