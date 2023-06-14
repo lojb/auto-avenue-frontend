@@ -23,7 +23,7 @@ jobs:
           node-version: 14
           
       - name: Dependencies
-        run: npm ci
+        run: npm install
         working-directory: frontend
 
       - name: Build
